@@ -60,17 +60,22 @@ $("#addBtn").on("click", function() {
   return false;
 });
 
-// database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
-//    var newTrainName = childSnapshot.val().train;
-//    var trainDestiny = childSnapshot.val().destination;
-//    var departsAt = childSnapshot.val().time;
-//    var freqLeaving = childSnapshot.val().frequency;
+   var newTrainName = childSnapshot.val().train;
+   var trainDestiny = childSnapshot.val().destination;
+   var freqLeaving = childSnapshot.val().frequency;
+   var firstDepart = moment(childSnapshot.val().time, "HH:mm");      
+   var currentTime = moment().format("HH:mm");
+   var nextArrivala = firstDepart.add(freqLeaving, 'm');
+   var nextArrivalb = firstDepart.add(freqLeaving, 'm').format("HH:mm");
+   var minutesAway = nextArrivala.diff(moment(), "minutes");
+   // testing purpose
+   // console.log(minutesAway);
 
-
-  
-
-
+ $("#currentSchedule > tbody").append("<tr><td>" + newTrainName + "</td><td>" + trainDestiny + "</td><td>" +
+  freqLeaving + "</td><td>" + nextArrivalb + "</td><td>" + minutesAway + "</td></tr>");
+});
 
 
 
