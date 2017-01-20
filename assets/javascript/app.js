@@ -33,10 +33,12 @@ var database = firebase.database();
 // 6. on-click event for adding a new train
 $("#addBtn").on("click", function() {
 
-  // 7. variables to pull user's input data
+  // 7. variables to pull user's input data, 
   var trainName = $("#trainInput").val().trim();
   var goingTo = $("#destinationInput").val().trim();
-  var earliestTime = moment($("#timeInput").val().trim(), "DD/MM/YY").format("X");
+  var earliestTime = $("#timeInput").val().trim();
+  // testing purpose
+  // console.log(earliestTime);
   var howOften = $("#freqInput").val().trim();
 
   // 8. creating object to contain user's input data
@@ -58,6 +60,15 @@ $("#addBtn").on("click", function() {
   return false;
 });
 
+// database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+
+//    var newTrainName = childSnapshot.val().train;
+//    var trainDestiny = childSnapshot.val().destination;
+//    var departsAt = childSnapshot.val().time;
+//    var freqLeaving = childSnapshot.val().frequency;
+
+
+  
 
 
 

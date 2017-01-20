@@ -1,3 +1,8 @@
+#header	 {
+	font-family: Kaushan Script;
+	color: #FF2D6F;
+}
+
 .jumbotron {
 	background-image: url("../images/dreamtownstation.jpg");
 	width: 100%;
