@@ -48,7 +48,7 @@ $("#addBtn").on("click", function() {
   };
 
   // 9. push new train data to Firebase and remove existing data from input fields
-  database.ref().push(newEmp);
+  database.ref().push(addingNewTrain);
 
   $("#trainInput").val("");
   $("#destinationInput").val("");
