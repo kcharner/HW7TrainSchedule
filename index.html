@@ -9,19 +9,24 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<div class="jumbotron">
+	<div class="jumbotron" id="jumboOne">
 		<div class="container">
-			<div class="col-lg-5" id="jumboContent">
+			<div class="col-lg-5">
         <h1 id="header">Welcome to Dream Station</h1>
-  			<button id="viewSchedule">View Train Schedule</button>
+  			<button class="btns" id="viewSchedule">View Train Schedule</button>
 			</div>
 		</div>
 	</div>
-
-	<div class="row train">
+  <div class="jumbotron" id="jumboTwo">
+    <div class="container">
+      <div class="col-lg-5">
+        <h1 id="newHeader">Where Will Your Train Take You?</h1>
+      </div>
+    </div>
+	  <div class="row">
         <div class="col-lg-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
+          <div class="panel panel-primary" id="panelA">
+            <div class="panel-heading" id="panelTitleA">
               <h3 class="panel-title">Current Departing Trains</h3>
             </div>
             <div class="panel-body">
@@ -42,8 +47,8 @@
           </div>
         </div>
     </div>
-	<div class="panel panel-primary train" id="addTrain">
-        <div class="panel-heading">
+	  <div class="panel panel-primary panelB" id="addTrain">
+        <div class="panel-heading" id="panelTitleB">
             <h3 class="panel-title">Add A Train</h3>
         </div>
         <div class="panel-body">
@@ -64,10 +69,11 @@
                   <label for="frequency">Frequency (in mins.)</label>
                   <input class="form-control" id="freqInput" type="text">
                 </div>
-                <button class="btn btn-primary" id="addBtn" type="submit">Submit</button>
+                <button class="btn btn-primary btns" id="addBtn" type="submit">Submit</button>
             </form>
         </div>
-	</div>
+	    </div>
+    </div>
 
 	<footer>
     	<div id="copyright">Copyright 2017 KAC</div>

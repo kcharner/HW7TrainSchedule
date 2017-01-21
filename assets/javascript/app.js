@@ -1,14 +1,17 @@
 // 1. hiding train schedule on page-load
+$("#jumboTwo").hide();
 $(".train").hide();
 
 // 2. setting up functions to be called later
 function hideJumbo() {
-	$(".jumbotron").hide();
+	$("#jumboOne").hide();
+  $("#jumboTwo").show();
 	$(".train").show();
 }
 
 function home() {
 	$(".jumbotron").show();
+  $("#jumboTwo").hide();
 	$(".train").hide();
 }
 
@@ -16,7 +19,7 @@ function home() {
 $("#viewSchedule").on("click", hideJumbo);
 
 // 4. resetting page on-click of header
-$("#header").on("click", home);
+$("#newHeader").on("click", home);
 
 // 5. initializing Firebase w/ my key
 var config = {
